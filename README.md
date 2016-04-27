@@ -1,4 +1,7 @@
 # Ketchapp <img src="./assets/food.png" width="70"/>
+[![](https://travis-ci.org/bennybauer/Ketchapp.svg?branch=master)](https://travis-ci.org/bennybauer/Ketchapp)
+
+
 Your [Pomodoro](http://pomodorotechnique.com/) mentor! 
 
 
