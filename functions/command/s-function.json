@@ -1,10 +1,10 @@
 {
-  "name": "ketchapp_handler",
+  "name": "command",
   "runtime": "python2.7",
   "description": "Serverless Lambda function for project: ketchapp",
   "customName": false,
   "customRole": false,
-  "handler": "ketchapp_handler/handler.handler",
+  "handler": "command/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "authorizer": {},
@@ -13,15 +13,15 @@
   },
   "endpoints": [
     {
-      "path": "ketchapp_handler",
-      "method": "GET",
+      "path": "command",
+      "method": "POST",
       "type": "AWS",
       "authorizationType": "none",
       "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-        "application/json": ""
+        "application/x-www-form-urlencoded": "{\"body\" : $input.json(\"$\")}"
       },
       "responses": {
         "400": {
@@ -44,7 +44,8 @@
   "environment": {
     "SERVERLESS_PROJECT": "${project}",
     "SERVERLESS_STAGE": "${stage}",
-    "SERVERLESS_REGION": "${region}"
+    "SERVERLESS_REGION": "${region}",
+    "SLACK_VERIFICATION_TOKEN": "${slackVerificationToken}"
   },
   "vpc": {
     "securityGroupIds": [],

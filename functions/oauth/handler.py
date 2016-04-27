@@ -21,7 +21,7 @@ def handler(event, context):
                              os.getenv('SLACK_CLIENT_SECRET'), os.getenv('SLACK_CLIENT_REDIRECT_URI'))
     response = slack_oauth.oauth_access(event['code'])
 
-    if response.body['ok']:
+    if response.successful:
         access_token = response.body['access_token']
         user_id = response.body['user_id']
         incoming_webhook = response.body['incoming_webhook']
@@ -44,9 +44,8 @@ def handler(event, context):
 
         # store user's token
 
-
     else:
-        log.debug("OAuth failed {}".format(response.body['error']))
+        log.debug("OAuth failed {}".format(response.error))
 
     # TODO: redirect to a nice app page - not possible yet in python lambda
     return "Success"
