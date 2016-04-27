@@ -69,8 +69,7 @@ Add `s-variables-common.json` file to `_meta/variables` folder:
 Create the dependencies packages:
 
 ```
-cd functions
-pip install -t vendored/ -r requirements.txt
+pip install -t functions/vendored/ -r requirements.txt
 ```
 
 Deploy it!
