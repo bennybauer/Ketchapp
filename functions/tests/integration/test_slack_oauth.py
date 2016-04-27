@@ -38,6 +38,10 @@ class TestSlackOAuthIntegration(unittest.TestCase):
 
     @staticmethod
     def load_env_vars_from_json(path):
+        if not os.path.isfile(path):
+            print "Warning: %s doesn't exist" % path
+            return
+
         with open(path) as vars_file:
             vars_data = json.load(vars_file)
 
