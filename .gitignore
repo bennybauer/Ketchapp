@@ -28,16 +28,20 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-#IDE
+# IDE
 **/.idea
 
-#OS
+# OS
 .DS_Store
 .tmp
 
-#SERVERLESS
+# SERVERLESS
 admin.env
 .env
-
-#Ignore _meta folder
 _meta
+
+# Python
+*.pyc
+
+# Tests
+.cache

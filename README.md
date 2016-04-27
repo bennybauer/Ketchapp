@@ -44,21 +44,25 @@ Install Serverless
 
 Clone this repository
 
-	git clone https://git.autodesk.com/bauerb/monitor-test
+	git clone https://github.com/bennybauer/Ketchapp.git
+	
 
-Add .env file to root folder:
-
-```
-SERVERLESS_STAGE=dev
-SERVERLESS_DATA_MODEL_STAGE=dev
-SERVERLESS_PROJECT_NAME=monitor-test
-```
-
-Add admin.env file to root folder (get staging credentials from 1Password):
+Add admin.env file to root folder:
 
 ```
-SERVERLESS_ADMIN_AWS_ACCESS_KEY_ID=
-SERVERLESS_ADMIN_AWS_SECRET_ACCESS_KEY=
+AWS_DEV_PROFILE=<your aws profile>
+```
+
+Add `s-variables-common.json` file to `_meta/variables` folder:
+
+```
+{
+  "project": "ketchapp",
+  "slackVerificationToken": "<your_verification_token>",
+  "slackClientId": "<your_client_id>",
+  "slackClientSecret": "<your_secret>",
+  "slackClientRedirectUri": "</oauth lambda url>"
+}
 ```
 
 

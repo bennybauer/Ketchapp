@@ -11,7 +11,7 @@ __author__ = 'bauerb'
 class TestSlackOAuthIntegration(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        here = os.path.dirname(os.path.realpath('__file__'))
+        here = os.path.dirname(os.path.realpath(__file__))
         vars_file_path = os.path.join(here, "../../../_meta/variables/s-variables-common.json")
         cls.load_env_vars_from_json(vars_file_path)
 
