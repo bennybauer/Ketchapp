@@ -4,7 +4,7 @@
   "description": "Serverless Lambda function for project: ketchapp",
   "customName": false,
   "customRole": false,
-  "handler": "handler.handler",
+  "handler": "oauth/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "authorizer": {},
@@ -21,7 +21,9 @@
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-        "application/json": ""
+        "application/json": {
+            "code": "$input.params('code')"
+        }
       },
       "responses": {
         "400": {

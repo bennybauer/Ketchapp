@@ -2,10 +2,7 @@
 [![](https://travis-ci.org/bennybauer/Ketchapp.svg?branch=master)](https://travis-ci.org/bennybauer/Ketchapp)
 
 
-Your [Pomodoro](http://pomodorotechnique.com/) mentor! 
-
-
-Ketchapp helps your focus to catch up with your work.
+Your [Pomodoro](http://pomodorotechnique.com/) mentor! Ketchapp is a Slack app that helps your focus to catch up with your work.
 
 <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands&client_id=2778138625.38014984439"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
 
