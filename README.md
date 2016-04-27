@@ -1,4 +1,4 @@
-# Ketchapp <img src="./assets/food.png" style="width: 70px;"/>
+# Ketchapp ![](./assets/food.png | width=70)
 Your [Pomodoro](http://pomodorotechnique.com/) mentor! 
 
 
