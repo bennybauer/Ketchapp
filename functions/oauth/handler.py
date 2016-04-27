@@ -1,10 +1,11 @@
 import json
 import logging
 import os
-# import sys
+import sys
 
-# here = os.path.dirname(os.path.realpath('__file__'))
-# sys.path.append(os.path.join(here, "../"))
+here = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(here, "../"))
+sys.path.append(os.path.join(here, "../vendored"))
 from lib.slack_oauth import SlackOAuth
 
 log = logging.getLogger()

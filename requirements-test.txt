@@ -1,4 +1,7 @@
 -r requirements.txt
+flake8==2.5.4
+mccabe==0.4.0
+pep8==1.7.0
 py==1.4.31
+pyflakes==1.0.0
 pytest==2.9.1
-
