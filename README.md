@@ -58,10 +58,12 @@ Add `s-variables-common.json` file to `_meta/variables` folder:
 ```
 {
   "project": "ketchapp",
+  "slackAppName": "Ketchapp",
   "slackVerificationToken": "<your_verification_token>",
-  "slackClientId": "<your_client_id>",
-  "slackClientSecret": "<your_secret>",
-  "slackClientRedirectUri": "</oauth lambda url>"
+  "slackAppId": "<your_app_id>",
+  "slackAppSecret": "<your_secret>",
+  "slackAppRedirectUri": "</slack-oauth lambda url>"
+  "slackAppWelcomePage": "<app_welcome_page>"
 }
 ```
 
@@ -77,7 +79,5 @@ Deploy it!
 	sls dash deploy
 
 
-
-
-
-*Ketcup icon was made by freepik from [www.flaticon.com](http://www.flaticon.com/free-icon/ketchup-bottle_34603)*
+###Credits###
+*Ketchup icon was made by freepik from [www.flaticon.com](http://www.flaticon.com/free-icon/ketchup-bottle_34603)*
