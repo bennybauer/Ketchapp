@@ -51,7 +51,7 @@
     "SLACK_APP_ID": "${slackAppId}",
     "SLACK_APP_SECRET": "${slackAppSecret}",
     "SLACK_APP_REDIRECT_URI": "${slackAppRedirectUri}",
-    "SLACK_APP_WELCOME_PAGE": "${slackAppWelcomePage}",
+    "SLACK_APP_WELCOME_PAGE": "${slackAppWelcomePage}"
   },
   "vpc": {
     "securityGroupIds": [],
