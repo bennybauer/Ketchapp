@@ -23,14 +23,14 @@ class TestSlackOAuthIntegration(unittest.TestCase):
         self.assertEquals('invalid_client_id', e.exception.message)
 
     def test_invalid_client_secret(self):
-        slack_oauth = SlackOAuth('token', os.environ['SLACK_CLIENT_ID'], 'client_secret')
+        slack_oauth = SlackOAuth('token', os.environ['SLACK_APP_ID'], 'client_secret')
         with self.assertRaises(Exception) as e:
             slack_oauth.oauth_access('123123')
 
         self.assertEquals('bad_client_secret', e.exception.message)
 
     def test_invalid_code(self):
-        slack_oauth = SlackOAuth('token', os.environ['SLACK_CLIENT_ID'], os.environ['SLACK_CLIENT_SECRET'])
+        slack_oauth = SlackOAuth('token', os.environ['SLACK_APP_ID'], os.environ['SLACK_APP_SECRET'])
         with self.assertRaises(Exception) as e:
             slack_oauth.oauth_access('123123')
 
@@ -46,6 +46,6 @@ class TestSlackOAuthIntegration(unittest.TestCase):
             vars_data = json.load(vars_file)
 
         os.environ['SLACK_VERIFICATION_TOKEN'] = vars_data['slackVerificationToken']
-        os.environ['SLACK_CLIENT_ID'] = vars_data['slackClientId']
-        os.environ['SLACK_CLIENT_SECRET'] = vars_data['slackClientSecret']
-        os.environ['SLACK_CLIENT_REDIRECT_URI'] = vars_data['slackClientRedirectUri']
+        os.environ['SLACK_APP_ID'] = vars_data['slackClientId']
+        os.environ['SLACK_APP_SECRET'] = vars_data['slackClientSecret']
+        os.environ['SLACK_APP_REDIRECT_URI'] = vars_data['slackClientRedirectUri']

@@ -6,7 +6,7 @@
   "customRole": false,
   "handler": "oauth/handler.handler",
   "timeout": 6,
-  "memorySize": 1024,
+  "memorySize": 128,
   "authorizer": {},
   "custom": {
     "excludePatterns": []
@@ -48,9 +48,10 @@
     "SERVERLESS_STAGE": "${stage}",
     "SERVERLESS_REGION": "${region}",
     "SLACK_VERIFICATION_TOKEN": "${slackVerificationToken}",
-    "SLACK_CLIENT_ID": "${slackClientId}",
-    "SLACK_CLIENT_SECRET": "${slackClientSecret}",
-    "SLACK_CLIENT_REDIRECT_URI": "${slackClientRedirectUri}"
+    "SLACK_APP_ID": "${slackAppId}",
+    "SLACK_APP_SECRET": "${slackAppSecret}",
+    "SLACK_APP_REDIRECT_URI": "${slackAppRedirectUri}",
+    "SLACK_APP_WELCOME_PAGE": "${slackAppWelcomePage}",
   },
   "vpc": {
     "securityGroupIds": [],

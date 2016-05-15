@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import sys
+import requests
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
@@ -10,8 +11,8 @@ here = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(here, "../lib"))
 sys.path.append(os.path.join(here, "../vendored"))
 
-from lib.slack_oauth import SlackOAuth, SlackOAuthResponse
-import requests
+from lib.slack_oauth import SlackOAuth
+from lib.model.slack import SlackOAuthResponse
 
 
 def handle_auth_response(response):
@@ -27,14 +28,8 @@ def handle_auth_response(response):
                                                                                slack_oauth_response.team_id))
 
         # Send welcome message to user
-        welcome_message = {"text": "Thanks for adding Ketchapp!"}
+        welcome_message = {"text": "Thanks for adding {}!".format(os.getenv('SLACK_APP_NAME'))}
         requests.post(slack_oauth_response.incoming_webhook_url, json=welcome_message)
-
-        # Get user data
-        # slack.users.
-
-        # store user's token
-
         return True
 
     else:
@@ -45,8 +40,8 @@ def handle_auth_response(response):
 def handler(event, context):
     log.debug("Received event {}".format(json.dumps(event)))
 
-    slack_oauth = SlackOAuth(os.getenv('SLACK_VERIFICATION_TOKEN'), os.getenv('SLACK_CLIENT_ID'),
-                             os.getenv('SLACK_CLIENT_SECRET'), os.getenv('SLACK_CLIENT_REDIRECT_URI'))
+    slack_oauth = SlackOAuth(os.getenv('SLACK_VERIFICATION_TOKEN'), os.getenv('SLACK_APP_ID'),
+                             os.getenv('SLACK_APP_SECRET'), os.getenv('SLACK_APP_REDIRECT_URI'))
     response = slack_oauth.authorize(event['code'])
 
     if handle_auth_response(response):

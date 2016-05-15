@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from lib.slack_oauth import SlackOAuthResponse
+from lib.model.slack import SlackOAuthResponse
 
 __author__ = 'bauerb'
 
