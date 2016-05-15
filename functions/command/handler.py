@@ -15,8 +15,8 @@ here = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(here, "../lib"))
 sys.path.append(os.path.join(here, "../vendored"))
 
-from lib.model.slack import SlackResponseMessage
 from lib.queue_handler import QueueHandler
+from lib.model.slack import SlackResponseMessage
 
 
 def handler(event, context):
