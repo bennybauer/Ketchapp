@@ -2,7 +2,6 @@ import json
 import logging
 import os
 import sys
-import requests
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
@@ -11,6 +10,7 @@ here = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(here, "../lib"))
 sys.path.append(os.path.join(here, "../vendored"))
 
+import requests
 from lib.slack_oauth import SlackOAuth
 from lib.model.slack import SlackOAuthResponse
 
