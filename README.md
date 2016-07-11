@@ -48,7 +48,7 @@ Clone this repository
 	
 [Set up](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files) your AWS credentials
 
-Add admin.env file to root folder with:
+Add `admin.env` file to root folder with:
 
 ```
 AWS_DEV_PROFILE=<your aws profile>
